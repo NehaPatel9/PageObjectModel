@@ -1,6 +1,6 @@
 import org.testng.annotations.Test;
 
-public class TestSuit extends BaseTest {//Created object from all other classes
+public class TestSuit extends BaseTest {
     HomePage homePage = new HomePage();
     RegistrationPage registrationPage = new RegistrationPage();
     RegistrationSubmit registrationSubmit = new RegistrationSubmit();
@@ -13,15 +13,15 @@ public class TestSuit extends BaseTest {//Created object from all other classes
     ShoppingCart shoppingCart = new ShoppingCart();
 
     @Test
-    public void RegistrationSucessfully() { //Call methods to run registration sucessfully
-        //homePage.VerifyTextofHomePage();
+    public void RegistrationSucessfully() {
         homePage.clickregistration();
         registrationPage.RegistrtionDetailFill();
         registrationPage.ClickonRegistrationButton();
         registrationSubmit.VerifyRegistrationButtonPage();
     }
         @Test
-        public void EmailaFriendProductInfo () { //Method to send a email to friend a product information
+        public void EmailaFriendProductInfo () {
+
             homePage.clickregistration();
             registrationPage.RegistrtionDetailFill();
             registrationPage.ClickonRegistrationButton();
@@ -33,7 +33,8 @@ public class TestSuit extends BaseTest {//Created object from all other classes
             emailaFreindmessageSent.VerifyEmailaFreindmessageSent();
         }
         @Test
-        public void AddtoCart(){ //Method to add to cart two products
+        public void AddtoCart(){
+
             homePage.ClickonComputer();
             computer.ClickonDeskTops();
             deskTop.ClickonProductDigitalStorm();
@@ -42,6 +43,5 @@ public class TestSuit extends BaseTest {//Created object from all other classes
             electronics.AddtoCartHTCOne();
             electronics.ClickonShoppingCart();
             shoppingCart.userVerifyShoppingCartMassage();
-
         }
 }

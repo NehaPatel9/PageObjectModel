@@ -8,7 +8,7 @@ public class EmailaFreindmessageSent extends Util1{
         String expectedText1 = "Your message has been sent.";
         String actualText1 = getTextfromElement(By.xpath("//div[@class=\"result\"]"));
 
-        Assert.assertEquals(actualText1, expectedText1); // Assert to compare Actual Result with Expected Result
+        Assert.assertEquals(actualText1, expectedText1);
     }
 
 }
