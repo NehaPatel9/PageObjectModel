@@ -1,4 +1,8 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class TestSuit extends BaseTest {
     HomePage homePage = new HomePage();
@@ -12,6 +16,8 @@ public class TestSuit extends BaseTest {
     Electronics electronics = new Electronics();
     ShoppingCart shoppingCart = new ShoppingCart();
 
+
+
     @Test
     public void RegistrationSucessfully() {
         homePage.clickregistration();
@@ -19,29 +25,57 @@ public class TestSuit extends BaseTest {
         registrationPage.ClickonRegistrationButton();
         registrationSubmit.VerifyRegistrationButtonPage();
     }
-        @Test
-        public void EmailaFriendProductInfo () {
 
-            homePage.clickregistration();
-            registrationPage.RegistrtionDetailFill();
-            registrationPage.ClickonRegistrationButton();
-            homePage.ClickonComputer();
-            computer.ClickonDeskTops();
-            deskTop.ClickonProductDigitalStorm();
-            digitalStormVANQUISH.ClickonEmailAFriend();
-            producteMailaFriend.emailafriend();
-            emailaFreindmessageSent.VerifyEmailaFreindmessageSent();
-        }
-        @Test
-        public void AddtoCart(){
+    @Test
+    public void EmailaFriendProductInfo() {
 
-            homePage.ClickonComputer();
-            computer.ClickonDeskTops();
-            deskTop.ClickonProductDigitalStorm();
-            digitalStormVANQUISH.ClickonAddtocartDigital();
-            homePage.ClickonElectronics();
-            electronics.AddtoCartHTCOne();
-            electronics.ClickonShoppingCart();
-            shoppingCart.userVerifyShoppingCartMassage();
+        homePage.clickregistration();
+        registrationPage.RegistrtionDetailFill();
+        registrationPage.ClickonRegistrationButton();
+        homePage.ClickonComputer();
+        computer.ClickonDeskTops();
+        deskTop.ClickonProductDigitalStorm();
+        digitalStormVANQUISH.ClickonEmailAFriend();
+        producteMailaFriend.emailafriend();
+        emailaFreindmessageSent.VerifyEmailaFreindmessageSent();
+    }
+
+    @Test
+    public void AddtoCart() {
+
+        homePage.ClickonComputer();
+        computer.ClickonDeskTops();
+        deskTop.ClickonProductDigitalStorm();
+        digitalStormVANQUISH.ClickonAddtocartDigital();
+        homePage.ClickonElectronics();
+        electronics.AddtoCartHTCOne();
+        electronics.ClickonShoppingCart();
+        shoppingCart.userVerifyShoppingCartMassage();
+    }
+
+    @Test
+    public void verifyEachProductHaveName() {
+
+        List<WebElement> ProductName = driver.findElements(By.xpath("//div[contains(@class,'product')]/div[2]/div/div[1]/div[2]/h2/a"));
+        for (WebElement Product : ProductName)
+            System.out.println(Product.getText());
+    }
+
+    @Test
+    public void demoalert() {
+           homePage.clickonSearchButton();
+           homePage.alertMessage();
+           homePage.verifyTextofAlert();
+           homePage.acceptAlert();
         }
+    @Test
+    public void faceBook(){
+            homePage.clickOnFaceBook();
+
+    }
+
 }
+
+
+
+

@@ -1,4 +1,3 @@
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class BaseTest extends Util1 {
@@ -8,9 +7,9 @@ public class BaseTest extends Util1 {
     public void SetBrowser(){ //Method to open browser
         browserManager.SetBrowser();
     }
-   @AfterMethod
-    public  void CloseBrowser(){ //Method to close browser
-       browserManager.CloseBrowser();
+  // @AfterMethod
+   // public  void CloseBrowser(){ //Method to close browser
+     //  browserManager.CloseBrowser();
    }
-}
+//}
 
