@@ -10,6 +10,5 @@ public class EmailaFreindmessageSent extends Util1{
 
         Assert.assertEquals(actualText1, expectedText1);
     }
-
 }
 

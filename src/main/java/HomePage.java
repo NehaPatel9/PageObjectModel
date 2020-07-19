@@ -9,7 +9,8 @@ public class HomePage extends Util1 {
     private By _Computers = By.linkText("Computers");
     private By _Electronics = By.linkText("Electronics");
     private By _Searchinputbox = By.xpath("//input[@type=\"submit\"]");
-    private By _Facebook = By.xpath("//a[contains(text(),'Log in')]");
+    private By _Facebook = By.linkText("Facebook");
+    private By _NewOnlineStore = By.linkText("New online store is open!");
 
     public void VerifyTextofHomePage() {
         String expectedTitle = "Welcome to our store";
@@ -55,8 +56,7 @@ public class HomePage extends Util1 {
     public void clickOnFaceBook(){
         clickElement(_Facebook, 20);
     }
-
-
+    public void clickOnNewonlineStore(){clickElement(_NewOnlineStore, 20);}
 }
 
 

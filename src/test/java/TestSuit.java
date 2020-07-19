@@ -15,6 +15,10 @@ public class TestSuit extends BaseTest {
     DigitalStormVANQUISH digitalStormVANQUISH = new DigitalStormVANQUISH();
     Electronics electronics = new Electronics();
     ShoppingCart shoppingCart = new ShoppingCart();
+    FaceBook faceBook =new FaceBook();
+    Chercher chercher = new Chercher();
+    NewOnlineStore newOnlineStore = new NewOnlineStore();
+
 
 
 
@@ -68,13 +72,33 @@ public class TestSuit extends BaseTest {
            homePage.verifyTextofAlert();
            homePage.acceptAlert();
         }
-    @Test
-    public void faceBook(){
-            homePage.clickOnFaceBook();
+   @Test
+  public void faceBook(){
+           homePage.clickOnFaceBook();
+           faceBook.faceBookWindow();
+           faceBook.assertURL();
+           faceBook.assrtText();
+           faceBook.assertByColour();
+           faceBook.closingChildWindow();
+  }
+  @Test
+   public void ChercherFilldetails(){
 
-    }
+            chercher.notAfriendlyTopic();
+          //  chercher.verifyText();
 
+  }
+   @Test
+   public void newOnlineStore(){
+        homePage.clickOnNewonlineStore();
+        newOnlineStore.assertURL();
+        newOnlineStore.Enterdetails();
+        newOnlineStore.AssertCommentSucessfully();
+        newOnlineStore.AssertTitle();
+
+   }
 }
+
 
 
 
