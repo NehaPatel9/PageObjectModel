@@ -15,14 +15,12 @@ public class TestSuit extends BaseTest {
     DigitalStormVANQUISH digitalStormVANQUISH = new DigitalStormVANQUISH();
     Electronics electronics = new Electronics();
     ShoppingCart shoppingCart = new ShoppingCart();
-    FaceBook faceBook =new FaceBook();
+    FaceBook faceBook = new FaceBook();
     Chercher chercher = new Chercher();
     NewOnlineStore newOnlineStore = new NewOnlineStore();
 
 
-
-
-    @Test
+    @Test(priority = 1)
     public void RegistrationSucessfully() {
         homePage.clickregistration();
         registrationPage.RegistrtionDetailFill();
@@ -30,7 +28,7 @@ public class TestSuit extends BaseTest {
         registrationSubmit.VerifyRegistrationButtonPage();
     }
 
-    @Test
+    @Test(priority = 2)
     public void EmailaFriendProductInfo() {
 
         homePage.clickregistration();
@@ -44,7 +42,7 @@ public class TestSuit extends BaseTest {
         emailaFreindmessageSent.VerifyEmailaFreindmessageSent();
     }
 
-    @Test
+    @Test(priority = 3)
     public void AddtoCart() {
 
         homePage.ClickonComputer();
@@ -57,7 +55,7 @@ public class TestSuit extends BaseTest {
         shoppingCart.userVerifyShoppingCartMassage();
     }
 
-    @Test
+    @Test(priority = 4)
     public void verifyEachProductHaveName() {
 
         List<WebElement> ProductName = driver.findElements(By.xpath("//div[contains(@class,'product')]/div[2]/div/div[1]/div[2]/h2/a"));
@@ -65,38 +63,48 @@ public class TestSuit extends BaseTest {
             System.out.println(Product.getText());
     }
 
-    @Test
+    @Test(priority = 5)
     public void demoalert() {
-           homePage.clickonSearchButton();
-           homePage.alertMessage();
-           homePage.verifyTextofAlert();
-           homePage.acceptAlert();
-        }
-   @Test
-  public void faceBook(){
-           homePage.clickOnFaceBook();
-           faceBook.faceBookWindow();
-           faceBook.assertURL();
-           faceBook.assrtText();
-           faceBook.assertByColour();
-           faceBook.closingChildWindow();
-  }
-  @Test
-   public void ChercherFilldetails(){
+        homePage.clickonSearchButton();
+        homePage.alertMessage();
+        homePage.verifyTextofAlert();
+        homePage.acceptAlert();
+    }
 
-            chercher.notAfriendlyTopic();
-          //  chercher.verifyText();
+    @Test(priority = 6)
+    public void faceBook() {
+        homePage.clickOnFaceBook();
+        faceBook.faceBookWindow();
+        faceBook.assertURL();
+        faceBook.assrtText();
+        faceBook.assertByColour();
+        faceBook.closingChildWindow();
+    }
 
-  }
-   @Test
-   public void newOnlineStore(){
+    @Test(priority = 7)
+    public void newOnlineStore() {
         homePage.clickOnNewonlineStore();
         newOnlineStore.assertURL();
         newOnlineStore.Enterdetails();
         newOnlineStore.AssertCommentSucessfully();
         newOnlineStore.AssertTitle();
+    }
 
-   }
+    @Test(priority = 8)
+    public void selectcurrency() {
+        homePage.VerifyTextofHomePage();
+        homePage.Selectcurrency();
+        homePage.Assertcurrency();
+    }
+
+    @Test(priority = 9)
+    public void ChercherFilldetails() {
+
+        //chercher.verifyText();
+        chercher.OpenBrowser();
+        chercher.SwitchtoIframes();
+        chercher.verifyURL();
+    }
 }
 
 

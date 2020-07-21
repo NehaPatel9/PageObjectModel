@@ -25,7 +25,7 @@ public class Util1 extends BasePage {
         select.selectByVisibleText(text);
     }
     public  static void selectFromDropDownByVisibleText(By by, String text, int time) {
-        org.openqa.selenium.support.ui.Select select = new Select(driver.findElement(by));
+        Select select = new Select(driver.findElement(by));
         select.selectByVisibleText(text);
     }
 }
