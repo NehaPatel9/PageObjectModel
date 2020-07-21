@@ -46,8 +46,8 @@ public class HomePage extends Util1 {
     }
 
     public void verifyTextofAlert() { // Assert text from alert message
-        String expectedTitle = "Please enter some search keyword"; //Epected alert message
-        String actualText1 = driver.switchTo().alert().getText(); //actual alert message
+        String expectedTitle = "Please enter some search keyword"; //Expected alert message
+        String actualText1 = driver.switchTo().alert().getText(); //Actual alert message
         Assert.assertEquals(actualText1, expectedTitle); //Assert actual and expected message
     }
 

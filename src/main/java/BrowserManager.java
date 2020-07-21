@@ -16,7 +16,7 @@ public class BrowserManager extends Util1 {
         driver.get("https://demo.nopcommerce.com/");
         driver.manage().window().maximize();
         }
-        //public  void CloseBrowser(){
-            //driver.close();
+        public  void CloseBrowser(){
+            driver.close();
         }
-    //}
+    }

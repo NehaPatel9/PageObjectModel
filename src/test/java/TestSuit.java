@@ -100,7 +100,7 @@ public class TestSuit extends BaseTest {
     @Test(priority = 9)
     public void ChercherFilldetails() {
 
-        //chercher.verifyText();
+        chercher.verifyText();
         chercher.OpenBrowser();
         chercher.SwitchtoIframes();
         chercher.verifyURL();
