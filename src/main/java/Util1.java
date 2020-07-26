@@ -50,7 +50,6 @@ public class Util1 extends BasePage {
 
         } catch (IOException e) {
             e.printStackTrace();
-
         }
     }
 }
